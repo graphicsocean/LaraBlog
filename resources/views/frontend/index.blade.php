@@ -5,27 +5,21 @@
     <div class="top-news">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 tn-left">
+                <div class="col-md-12 tn-center mb-5">
                     <div class="row tn-slider">
-                        <div class="col-md-6">
-                            <div class="tn-img">
-                                <img src="img/news-450x350-1.jpg" />
-                                <div class="tn-title">
-                                    <a href="">Lorem ipsum dolor sit amet</a>
+                        @foreach ($posts as $item)
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{{asset('upload/'.$item->thumbnail)}}" />
+                                    <div class="tn-title">
+                                        <a href="{{url($item->slug.'/'.$item->id.'.html')}}">{{$item->title}}</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="tn-img">
-                                <img src="img/news-450x350-2.jpg" />
-                                <div class="tn-title">
-                                    <a href="">Integer hendrerit elit eget purus sodales maximus</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-                <div class="col-md-6 tn-right">
+                {{-- <div class="col-md-6 tn-right">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="tn-img">
@@ -60,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -72,78 +66,16 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-1.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
+                        @foreach ($posts as $item)
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="{{asset('upload/'.$item->thumbnail)}}" />
+                                    <div class="mn-title">
+                                        <a href="{{url($item->slug.'/'.$item->id.'.html')}}">{{$item->title}}</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-2.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-3.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-4.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-5.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-1.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-2.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-3.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="img/news-350x223-4.jpg" />
-                                <div class="mn-title">
-                                    <a href="">Lorem ipsum dolor sit</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -151,16 +83,9 @@
                     <div class="mn-list">
                         <h2>Read More</h2>
                         <ul>
-                            <li><a href="">Lorem ipsum dolor sit amet</a></li>
-                            <li><a href="">Pellentesque tincidunt enim libero</a></li>
-                            <li><a href="">Morbi id finibus diam vel pretium enim</a></li>
-                            <li><a href="">Duis semper sapien in eros euismod sodales</a></li>
-                            <li><a href="">Vestibulum cursus lorem nibh</a></li>
-                            <li><a href="">Morbi ullamcorper vulputate metus non eleifend</a></li>
-                            <li><a href="">Etiam vitae elit felis sit amet</a></li>
-                            <li><a href="">Nullam congue massa vitae quam</a></li>
-                            <li><a href="">Proin sed ante rutrum</a></li>
-                            <li><a href="">Curabitur vel lectus</a></li>
+                            @foreach ($posts as $item)
+                            <li><a href="{{url($item->slug.'/'.$item->id.'.html')}}">{{$item->slug}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
