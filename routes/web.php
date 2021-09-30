@@ -20,5 +20,5 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('{slug}/{id}'.'.html', [FrontendController::class, 'showSinglePost']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->name('dashboard');
